@@ -1,14 +1,147 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+    height: 100%;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body{
+    margin: 0;
+    min-height: 100%;
+}
+body, #root, .AppContainer{
+    height: 100%;
+}
+.centered{
+    text-align: center;
+}
+.clickable{
+    cursor: pointer;
+}
+.input-group{
+    margin-bottom: 1em;
+}
+input::placeholder{
+    color:#A8A8A8;
+    font-style: italic;
+  }
+input{
+    color: black !important;
+}
+/* Home page css */
+.homePage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    background-image: url('./imgs/Homepagebg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.homePageContent{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 10% auto;
+    width: 60%;
+    height: 60%;
+    padding: 1em;
+    background-color: rgb(227, 220, 220);
+    border-radius: 5px;
+    font-size: 1.3em; 
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.60)
+}
+.homePageContent h1{
+    margin-bottom: 0.5em;
+}
+.homePageContent ul{
+    list-style: none;
+}
+.homepageButtons a > button {
+    width: 40%;
+}
+.homepageButtons{
+    text-align: center;
+    margin: 2em auto;
+}
+.homepageButtons a{
+    margin: auto 0.2em;
+}
+.NavigationBar{
+    display: flex;
+    align-items: center;
+    height: 2em;
+    background-color: rgba(195, 191, 191, 0.45)
+}
+.headerButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerButtons button{
+    width: 15%;
+    margin: 0 0.5em;
+}
+.NavbarItems > a{
+    padding:0 0.5em;
+}
+a:hover{
+    text-decoration: none;
+}
+.LoginPage, .registerPage{
+    height: 100%;
+    background-image: url("./imgs/Library.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.input-group{
+    margin: 1em auto;
+    width: 80%;
+}
+.LoginFormContainer, .registerFormContainer{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LoginForm, .registerForm{
+    padding: 1em;
+    border-radius: 5px;
+    width: 35%;
+    background-color:rgb(242, 242, 242);
+}
+.LoginForm h1, .registerForm h1{
+    margin: 0.5em auto 1em auto;
+}
+.LoginForm input, .registerForm input {
+    margin-bottom: 1em;
+}
+.loginButtons, .registerButtons{
+    margin: 1em 0 0.5em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.loginButtons button, a{
+    margin: 0 0.5em;
+    width: 35%;
+}
+.loginButtons a > button {
+    width: 100%;
+}
+.registerButtons button, a{
+    margin: 0 0.5em;
+    width: 35%;
+}
+.registerButtons a > button {
+    width: 100%;
+}
+.formPrepend{
+    min-width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.formPrepend i{
+    width: 100%;
+    text-align: center;
 }
