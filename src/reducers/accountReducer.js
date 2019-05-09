@@ -1,9 +1,9 @@
-import {LOGIN, LOGOUT} from '../actions/types'
+import {LOGIN, LOGOUT, CHANGETHROUGHLOGOUT} from '../actions/types'
 
 const initialstate = {
     isLoggedIn: false,
     userName: "",
-    test2: "test"
+    throughlogout: false
 }
 
 export default function(state = initialstate, action){
@@ -12,13 +12,21 @@ export default function(state = initialstate, action){
             console.log("Dit is in de accountReducer onder action.type === LOGIN")
             return{
                 ...state,
-                userName: action.payload.userName,
+                userName: action.payload.user,
                 isLoggedIn: action.payload.isLoggedIn
+            }
+        case CHANGETHROUGHLOGOUT:
+            console.log("Changethroughlogout called in reducer")
+            return{
+                ...state,
+                throughlogout: action.payload
             }
         case LOGOUT:
             return{
                 ...state,
-                isLoggedIn: action.payload
+                username: "",
+                isLoggedIn: action.payload,
+                throughlogout: true
             }
         default:
             return state

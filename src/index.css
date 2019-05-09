@@ -24,6 +24,7 @@ input::placeholder{
 input{
     color: black !important;
 }
+
 /* Home page css */
 .homePage{
     display: grid;
@@ -37,9 +38,8 @@ input{
 .homePageContent{
     grid-column-start: 2;
     grid-column-end: 3;
-    margin: 10% auto;
+    margin: auto auto;
     width: 60%;
-    height: 60%;
     padding: 1em;
     background-color: rgb(227, 220, 220);
     border-radius: 5px;
@@ -62,27 +62,30 @@ input{
 .homepageButtons a{
     margin: auto 0.2em;
 }
+
+/* Navigation bar*/
 .NavigationBar{
+    position: absolute;
+    width: 100%;
+    height: 3em;
     display: flex;
     align-items: center;
-    height: 2em;
-    background-color: rgba(195, 191, 191, 0.45)
+    background-color: rgba(200, 195, 195, 0.91)
 }
-.headerButtons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.NavigationBar li{
+    list-style: none;
 }
-.headerButtons button{
-    width: 15%;
-    margin: 0 0.5em;
+.NavigationBar li:last-child > *{
+    margin: 0 1em;
 }
-.NavbarItems > a{
-    padding:0 0.5em;
+.pushright{
+    margin-left:auto;
 }
-a:hover{
-    text-decoration: none;
+.rightitemnav{
+    color: #479CF6
 }
+
+/* Login page and registerpage*/
 .LoginPage, .registerPage{
     height: 100%;
     background-image: url("./imgs/Library.jpeg");
@@ -144,4 +147,18 @@ a:hover{
 .formPrepend i{
     width: 100%;
     text-align: center;
+}
+
+/* Book overview page*/
+.bookOverviewContainer{
+    width: 80%;
+    margin: 0 auto;
+}
+.headerButtons{
+    display: flex;
+    justify-content: center;
+}
+.headerButtons > * {
+    width: 15%;
+    margin: 0 0.5em;
 }

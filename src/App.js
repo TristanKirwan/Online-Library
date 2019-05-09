@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch, Router} from 'react-router-dom'
 import { Provider } from 'react-redux'
+import history from './history'
 
 import Store from './Store'
 
@@ -22,7 +23,7 @@ class App extends Component {
   render() {
       return(
         <Provider store={Store}>
-          <BrowserRouter>
+          <Router history={history}>
             <div className="AppContainer">
               <Navbar />
               <Switch>
@@ -35,7 +36,7 @@ class App extends Component {
                   <Route component={Error}/>
               </Switch>
             </div>
-          </BrowserRouter>
+          </Router>
         </Provider>
     );
   }

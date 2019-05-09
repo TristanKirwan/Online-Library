@@ -14,27 +14,36 @@ import {Logout} from '../actions/accountActions'
 function Navbar(props){    
     return(
         <Nav className="NavigationBar">
-            <NavItem className="NavbarItems">
+            <NavItem>
                 <NavLink to="/">Home</NavLink>
-                {console.log(props)}
-                {props.isLoggedIn ?
-                    <React.Fragment>
-                        <NavLink to="/Books">Bookoverview</NavLink>
-                        <NavLink to="/Profile"><i className="fas fa-user"></i></NavLink>
-                        <Button onClick={() => props.Logout()}></Button> 
-                    </React.Fragment>
-                :
-                    <React.Fragment>
-                        <NavLink to="Login">Login</NavLink>
-                        <NavLink to="/register">Register</NavLink>
-                    </React.Fragment>}
             </NavItem>
+            {props.isLoggedIn ?
+                <React.Fragment>
+                    <NavItem>
+                    <NavLink to="/Books">Bookoverview</NavLink>
+                    </NavItem>
+                        <NavItem className="pushright">
+                            <NavLink to="/Profile" className="NavbarProfile rightitemnav"><i className="fas fa-user"></i>{props.userName}</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <Button onClick={() => props.Logout()}>Logout</Button> 
+                        </NavItem>
+                </React.Fragment>
+            :
+                <React.Fragment>
+                    <NavItem className="pushright">
+                        <NavLink to="Login" className="rightitemnav">Login</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink to="/register" className="rightitemnav">Register</NavLink>
+                    </NavItem>
+                </React.Fragment>}
         </Nav>
     )
 }
 
 Navbar.propTypes = {
-    userName: PropTypes.string.isRequired,
+    userName: PropTypes.string,
     isLoggedIn: PropTypes.bool.isRequired,
     Logout: PropTypes.func.isRequired
 }

@@ -1,1 +1,17 @@
 In register: password met special characters.
+Admin functionaliteiten en normal user functionaliteiten scheiden.
+Account pagina maken en mooi maken.
+Navbar over nadenken (in combinatie met styling).
+
+
+normal user:
+    Add to favourite
+    Add to cart
+    Order
+Admin user:
+    Edit book
+    Delete book
+    Add book
+    Edit/Delete users
+
+Pagination.

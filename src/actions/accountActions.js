@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import { LOGIN, LOGOUT } from './types'
+import { LOGIN, LOGOUT, CHANGETHROUGHLOGOUT } from './types'
+import history from '../history'
 
 export function Login(username, password){
     console.log(`In accountActions Login function zijn de parameters username:${username} en password:${password}`)
@@ -13,7 +14,7 @@ export function Login(username, password){
                 dispatch({
                     type: LOGIN,
                     payload: {
-                        username: username,
+                        user: username,
                         isLoggedIn: true
                     }
                 })
@@ -34,5 +35,16 @@ export function Logout(){
             type: LOGOUT,
             payload: false
          })
+         history.push("/logout")
+    }
+}
+
+export function ChangeThroughLogout(){
+    console.log("changethroughlogout called in accountActions")
+    return function(dispatch){
+        dispatch({
+            type: CHANGETHROUGHLOGOUT,
+            payload: false
+        })
     }
 }

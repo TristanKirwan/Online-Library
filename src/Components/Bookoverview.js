@@ -145,7 +145,7 @@ class Bookoverview extends Component {
             <div className="headerButtons">
               <Button color="primary" onClick={this.filteredSearch}>Search</Button>
               <Button color="primary" onClick={this.resetFilter}>Reset list of books</Button>
-              <Button color="primary" onClick={this.toggleNewBookModal.bind(this)}>Add Book</Button>
+              <Button color="success" onClick={this.toggleNewBookModal.bind(this)}>Add Book</Button>
             </div>
         </Jumbotron>
 
