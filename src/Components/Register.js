@@ -185,7 +185,7 @@ class Register extends React.Component{
             )
         }
         return(
-            <div className="registerPage">
+            <div className="registerPage fillUpFlex">
                 <div className="registerFormContainer">
                     <FormGroup className="registerForm">
                         <h1 className="centered">Register at the online Library.</h1>

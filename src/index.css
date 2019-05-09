@@ -5,7 +5,12 @@ body{
     margin: 0;
     min-height: 100%;
 }
-body, #root, .AppContainer{
+body, #root{
+    height: 100%;
+}
+.AppContainer{
+    display: flex;
+    flex-direction: column;
     height: 100%;
 }
 .centered{
@@ -24,12 +29,13 @@ input::placeholder{
 input{
     color: black !important;
 }
-
+.fillUpFlex{
+    flex: 1 1 auto;
+}
 /* Home page css */
 .homePage{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100%;
     background-image: url('./imgs/Homepagebg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,9 +71,8 @@ input{
 
 /* Navigation bar*/
 .NavigationBar{
-    position: absolute;
+    flex: 0 0 3em;
     width: 100%;
-    height: 3em;
     display: flex;
     align-items: center;
     background-color: rgba(200, 195, 195, 0.91)
@@ -87,7 +92,6 @@ input{
 
 /* Login page and registerpage*/
 .LoginPage, .registerPage{
-    height: 100%;
     background-image: url("./imgs/Library.jpeg");
     background-size: cover;
     background-position: center;
@@ -161,4 +165,22 @@ input{
 .headerButtons > * {
     width: 15%;
     margin: 0 0.5em;
+}
+.bookpage{
+    min-height: 101%;
+}
+
+/*Profile page. */
+.profilePage{
+    display: flex;
+    width: 70%;
+    margin: 1em auto;
+    background-color: rgb(134, 125, 125);
+}
+.profilePageNav{
+    flex: 0 0 30%;
+}
+.profilePageNav li{
+    text-decoration: none;
+    padding: 1.5em;
 }

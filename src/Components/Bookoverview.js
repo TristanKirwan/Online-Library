@@ -124,7 +124,7 @@ class Bookoverview extends Component {
     }
 
     return (
-      <div className="App container">
+      <div className="App container bookpage">
         <Jumbotron>
           <h1 className="centered">Welcome to the online library.</h1>
             <InputGroup>

@@ -4,14 +4,9 @@ import {NavLink} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from '../history'
 
-import {
-    Button
-} from 'reactstrap'
-
 import { ChangeThroughLogout } from '../actions/accountActions'
 
 function logoutpage(props){
-    console.log(props)
     if(props.throughlogout === false){
         history.goBack()
     }

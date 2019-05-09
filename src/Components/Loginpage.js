@@ -76,7 +76,7 @@ class Loginpage extends React.Component{
         }
 
         return(
-            <div className="LoginPage">
+            <div className="LoginPage fillUpFlex">
                 <div className="LoginFormContainer">
                     <FormGroup className="LoginForm">
                         <h1 className="centered">Login to the online Library.</h1>

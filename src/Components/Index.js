@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 function Test(){
     return(
-        <div className="homePage">
+        <div className="homePage fillUpFlex">
             <div className="homePageContent">
                 <h1 className="centered">Welcome to the online book Library and store</h1>
                 <p>The online Book Library and store allows you to:</p>

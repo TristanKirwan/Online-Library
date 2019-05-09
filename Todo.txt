@@ -15,3 +15,13 @@ Admin user:
     Edit/Delete users
 
 Pagination.
+
+Functionaliteiten:
+    Add to favourite
+    Add to cart
+    Order
+    
+Styling/other:
+    Logoutpage
+    Accountpage
+    Navbar

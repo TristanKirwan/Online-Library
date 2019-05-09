@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch, Router} from 'react-router-dom'
+import { Route, Switch, Router} from 'react-router-dom'
 import { Provider } from 'react-redux'
 import history from './history'
 
@@ -8,7 +8,7 @@ import Store from './Store'
 import Loginpage from './Components/Loginpage'
 import Bookoverview from './Components/Bookoverview'
 import Navbar from './Components/Navbar'
-import Home from './Components/Home'
+import Home from './Components/Index'
 import Error from './Components/Error'
 import Register from './Components/Register'
 import Profile from './Components/Profile'
