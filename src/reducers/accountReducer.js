@@ -1,8 +1,16 @@
-import {LOGIN, LOGOUT, CHANGETHROUGHLOGOUT} from '../actions/types'
+import {LOGIN, LOGOUT, CHANGETHROUGHLOGOUT, CHANGEUSERNAME} from '../actions/types'
 
 const initialstate = {
     isLoggedIn: false,
-    userName: "",
+    accountdetails: {
+        // userName: "Tristan",
+        // email:  "test@test.com",
+        // avatar: "https://image.flaticon.com/icons/svg/149/149452.svg",
+        userName: "",
+        email:  "",
+        avatar: "",
+        isAdmin: false
+    },
     throughlogout: false
 }
 
@@ -12,7 +20,12 @@ export default function(state = initialstate, action){
             console.log("Dit is in de accountReducer onder action.type === LOGIN")
             return{
                 ...state,
-                userName: action.payload.user,
+                accountdetails:{
+                    userName:action.payload.username,
+                    email: action.payload.email,
+                    avatar: action.payload.avatar,
+                    isAdmin: action.payload.isAdmin
+                }, 
                 isLoggedIn: action.payload.isLoggedIn
             }
         case CHANGETHROUGHLOGOUT:
@@ -27,6 +40,11 @@ export default function(state = initialstate, action){
                 username: "",
                 isLoggedIn: action.payload,
                 throughlogout: true
+            }
+        case CHANGEUSERNAME:
+            return{
+                ...state,
+                username: action.payload
             }
         default:
             return state

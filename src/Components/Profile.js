@@ -7,6 +7,8 @@ import PurchaseHistory from './Profile/PurchaseHistory'
 import PlacedOrders from './Profile/PlacedOrders'
 import DefaultProfile from './Profile/DefaultProfile'
 
+import { Logout } from '../actions/accountActions'
+
 class Profile extends React.Component {
   constructor(){
     super();
@@ -20,6 +22,9 @@ class Profile extends React.Component {
     /* switchitem gets passed by the list onClicks. shownpage is rendered and changed according to switch */
     let newpage
     switch(switchitem){
+      case "AccountSettings":
+        newpage = <DefaultProfile />
+        break;
       case "PurchaseHistory":
         newpage = <PurchaseHistory />
         break;
@@ -40,28 +45,49 @@ class Profile extends React.Component {
     //   history.goBack();
     // }
     return (
-      <div className="fillUpFlex profilePage">
-          <ul className="profilePageNav">
-            <li onClick={() => this.changeshownpage("PurchaseHistory")}>Purchase history</li>
-            <li onClick={() => this.changeshownpage("PlacedOrders")}>Placed orders</li>
-            <li>Logout</li>
-          </ul>
-          <div>
-            <h1>Welkom,{this.props.userName}</h1>
-            {this.state.shownpage}
-          </div>
+      <div className="profilePage">
+        <div className="fillUpFlex profilePageContent">
+            <ul className="profilePageNav secondaryfont clickablelist flex-col">
+              <li 
+                onClick={() => this.changeshownpage("AccountSettings")}
+                className="clickablelistitem">
+                  Account settings
+                </li>
+              <li 
+                onClick={() => this.changeshownpage("PurchaseHistory")}
+                className="clickablelistitem">
+                  Purchase history
+                </li>
+              <li 
+                onClick={() => this.changeshownpage("PlacedOrders")}
+                className="clickablelistitem">
+                  Placed orders
+                </li>
+              <li className="clickablelistitem" onClick={ () => {this.props.Logout()}}>Logout</li>
+              {console.log(this.props)}
+            </ul>
+            <div className="fillUpFlex flex-col profilepagecontents">
+              <div className="profileHeader">
+                <img src={this.props.useraccount.avatar} className="avatar" alt="profile image"></img>
+                <h1 className="centered">{this.props.useraccount.userName}</h1>
+              </div>
+                {this.state.shownpage}
+            </div>
+        </div>
       </div>
     )
   } 
 }
 
 Profile.propTypes = {
-  userName: PropTypes.string.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
+  useraccount: PropTypes.object.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
+  Logout: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-  userName: state.account.userName,
-  isLoggedIn: state.account.isLoggedIn
+  useraccount: state.account.accountdetails,
+  isLoggedIn: state.account.isLoggedIn,
+  Logout: state.account.Logout
 })
-export default connect(mapStateToProps, {})(Profile)
+export default connect(mapStateToProps, {Logout})(Profile)

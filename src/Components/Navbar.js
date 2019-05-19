@@ -50,7 +50,7 @@ Navbar.propTypes = {
 
 const mapStateToProps = state => ({
     isLoggedIn: state.account.isLoggedIn,
-    userName: state.account.userName,
+    userName: state.account.accountdetails.userName,
     Logout: state.account.Logout
 }
 )
